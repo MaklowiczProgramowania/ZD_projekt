@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista zadań</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wczesniej">
+        <button class="data-wczesniej"><img src="./images/arrow-left-solid.svg" alt="Arrow left solid" class="svg"></button>
+    </div>
+    <div class="main">
+        <div class="lista" id="wczoraj">
+            <h2 id="data-wczoraj">17.05.2023</h2>
+            <div class="zadanie">
+                <input type="text" class="input-zadanie" value="Przykładowe zadanie">
+                <button class="ukoncz-zadanie"><img src="./images/check-solid.svg" alt="Check solid" class="svg"></button>
+                <button class="usun-zadanie"><img src="./images/delete-left-solid.svg" alt="Delete solid" class="svg"></button>
+            </div>
+        </div>
+        <div class="lista" id="dzisiaj">
+            <h2 id="data-dzisiaj">18.05.2023</h2>
+            <div class="zadanie">
+                <input type="text" class="input-zadanie" value="Przykładowe zadanie">
+                <button class="ukoncz-zadanie"><img src="./images/check-solid.svg" alt="Check solid" class="svg"></button>
+                <button class="usun-zadanie"><img src="./images/delete-left-solid.svg" alt="Delete solid" class="svg"></button>
+                <button class="dodaj-zadanie"><img src="./images/plus-solid.svg" alt="Plus solid" class="svg"></button>
+            </div>
+        </div>
+        <div class="lista" id="jutro">
+            <h2 id="data-jutro">19.05.2023</h2>
+            <div class="zadanie">
+                <input type="text" class="input-zadanie" value="Przykładowe zadanie">
+                <button class="ukoncz-zadanie"><img src="./images/check-solid.svg" alt="Check solid" class="svg"></button>
+                <button class="usun-zadanie"><img src="./images/delete-left-solid.svg" alt="Delete solid" class="svg"></button>
+            </div>
+        </div>
+    </div>
+    <div class="pozniej">
+        <button class="data-pozniej"><img src="./images/arrow-right-solid.svg" alt="Arrow right solid" class="svg"></button>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>

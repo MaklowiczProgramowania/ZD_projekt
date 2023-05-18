@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Monsterrat', sans-serif;
+    background: #222831;
+}
+
+.main{
+    width: 80%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+
+.wczesniej{
+    display: flex;
+    float: left;
+    width: 10%;
+}
+
+.pozniej{
+    display: flex;
+    float: left;
+    width: 10%;
+}
+
+.lista{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
+}
+
+.svg{
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
