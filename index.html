@@ -12,38 +12,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="wczesniej">
-        <button class="data-wczesniej"><img src="./images/arrow-left-solid.svg" alt="Arrow left solid" class="svg"></button>
+    <div id="opcje">
+        <h1>Dodaj nowe zadanie</h1>
+        <div id="data-wybor">
+            <input type="date" id="data">
+        </div>
+        <div id="kategoria-wybor">
+            <label>
+                <input type="radio" name="kategoria" id="kategoria1" value="bardzo-wazne" />
+                <span class="bubble-bardzo-wazne"></span>
+                <div>Bardzo ważne</div>
+            </label>
+            <label> 
+                <input type="radio" name="kategoria" id="kategoria2" value="wazne" />
+                <span class="bubble-wazne"></span>
+                <div>Ważne</div>
+            </label> 
+            <label> 
+                <input type="radio" name="kategoria" id="kategoria3" value="malo-wazne" />
+                <span class="bubble-malo-wazne"></span>
+                <div>Mało ważne</div>
+            </label>
+        </div>
+        <input type="text" id="input-zadanie" placeholder="Treść zadania">
+        <button id="dodaj-zadanie">+</button>
     </div>
-    <div class="main">
-        <div class="lista" id="wczoraj">
-            <h2 id="data-wczoraj">17.05.2023</h2>
-            <div class="zadanie">
-                <input type="text" class="input-zadanie" value="Przykładowe zadanie">
-                <button class="ukoncz-zadanie"><img src="./images/check-solid.svg" alt="Check solid" class="svg"></button>
-                <button class="usun-zadanie"><img src="./images/delete-left-solid.svg" alt="Delete solid" class="svg"></button>
-            </div>
+    <div id="zadania">
+        <div class='zadanie'>
+            <textarea class='zadanie-tresc' maxlength="128"></textarea>
+            <span class="data-zakoncz">06.05.2023</span>
+            <button class='zadanie-usun'>X</button>
+            <button class="zadanie-ukoncz">✔</button>
         </div>
-        <div class="lista" id="dzisiaj">
-            <h2 id="data-dzisiaj">18.05.2023</h2>
-            <div class="zadanie">
-                <input type="text" class="input-zadanie" value="Przykładowe zadanie">
-                <button class="ukoncz-zadanie"><img src="./images/check-solid.svg" alt="Check solid" class="svg"></button>
-                <button class="usun-zadanie"><img src="./images/delete-left-solid.svg" alt="Delete solid" class="svg"></button>
-                <button class="dodaj-zadanie"><img src="./images/plus-solid.svg" alt="Plus solid" class="svg"></button>
-            </div>
-        </div>
-        <div class="lista" id="jutro">
-            <h2 id="data-jutro">19.05.2023</h2>
-            <div class="zadanie">
-                <input type="text" class="input-zadanie" value="Przykładowe zadanie">
-                <button class="ukoncz-zadanie"><img src="./images/check-solid.svg" alt="Check solid" class="svg"></button>
-                <button class="usun-zadanie"><img src="./images/delete-left-solid.svg" alt="Delete solid" class="svg"></button>
-            </div>
-        </div>
-    </div>
-    <div class="pozniej">
-        <button class="data-pozniej"><img src="./images/arrow-right-solid.svg" alt="Arrow right solid" class="svg"></button>
     </div>
     <script src="./js/script.js"></script>
 </body>

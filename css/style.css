@@ -1,42 +1,83 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F2E3DB;
 }
 
-body{
-    font-family: 'Monsterrat', sans-serif;
-    background: #222831;
+#dodaj-zadanie{
+    width: 50px;
+    height: 50px;
+    font-size: 37.5px;
+    padding: 2.5px 12.5px 2.5px 12.5px;
+    margin: 50px 7.5px 0 35px;
+    border: 2px solid #263A29;
+    background-color: #41644A;
+    border-radius: 100px;
+    cursor: pointer;
 }
 
-.main{
-    width: 80%;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    float: left;
-}
-
-.wczesniej{
-    display: flex;
-    float: left;
-    width: 10%;
-}
-
-.pozniej{
-    display: flex;
-    float: left;
-    width: 10%;
-}
-
-.lista{
+#zadania{
     display: grid;
     grid-template-columns: repeat(auto-fill, 350px);
+    gap: 24px;
+    margin-top: 50px;
 }
 
-.svg{
-    width: 20px;
-    height: 20px;
-    object-fit: cover;
+
+.zadanie{
+    margin: 0 50px 0 50px;
+}
+
+.zadanie-tresc{
+    border:6px solid #41644A;
+    color: #263A29;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 25px;
+    background-color: #FFF;
+    resize:unset;
+    height: 280px;
+}
+
+.zadanie-tresc:focus{
+    outline: none;
+}
+
+.zadanie-usun{
+    position: absolute;
+    transform: translate(220px,-50px);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 3px 7.5px 3px 7.5px;
+    border: 2px solid #263A29;
+    background-color: #41644A;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.zadanie-ukoncz{
+    position: absolute;
+    transform: translate(185px,-50px);
+    font-size: 15.5px;
+    font-weight: bold;
+    padding: 3px 7.5px 3px 7.5px;
+    border: 2px solid #263A29;
+    background-color: #41644A;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.zadanie-ukoncz img{
+    width: 15px;
+    height: 18px;
+    background: none;
+}
+
+.data-zakoncz{
+    position: absolute;
+    transform: translate(75px, -45px);
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #FFF;
 }
