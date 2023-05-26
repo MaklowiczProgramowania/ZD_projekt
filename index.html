@@ -13,7 +13,8 @@
 </head>
 <body>
     <div id="opcje">
-        <h1>Dodaj nowe zadanie</h1>
+        <h1 id="tytul">Menedżer zadań 📔</h1>
+        <textarea id='nowe-zadanie-tresc' maxlength="128" placeholder="Treść nowego zadania"></textarea>
         <div id="data-wybor">
             <input type="date" id="data">
         </div>
@@ -34,17 +35,9 @@
                 <div>Mało ważne</div>
             </label>
         </div>
-        <input type="text" id="input-zadanie" placeholder="Treść zadania">
         <button id="dodaj-zadanie">+</button>
     </div>
-    <div id="zadania">
-        <div class='zadanie'>
-            <textarea class='zadanie-tresc' maxlength="128"></textarea>
-            <span class="data-zakoncz">06.05.2023</span>
-            <button class='zadanie-usun'>X</button>
-            <button class="zadanie-ukoncz">✔</button>
-        </div>
-    </div>
+    <div id="zadania"></div>
     <script src="./js/script.js"></script>
 </body>
 </html>
