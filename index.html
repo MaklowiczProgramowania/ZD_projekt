@@ -14,28 +14,29 @@
 <body>
     <div id="opcje">
         <h1 id="tytul">Menedżer zadań 📔</h1>
-        <textarea id='nowe-zadanie-tresc' maxlength="128" placeholder="Treść nowego zadania"></textarea>
+        <textarea id='nowe-zadanie-tresc' maxlength="128" placeholder="Treść nowego zadania 📝"></textarea>
         <div id="data-wybor">
+            <label for="data" id="data-label">Termin wykonania 📅</label>
             <input type="date" id="data">
         </div>
         <div id="kategoria-wybor">
-            <label>
+            <div class="kategoria">
                 <input type="radio" name="kategoria" id="kategoria1" value="bardzo-wazne" />
-                <span class="bubble-bardzo-wazne"></span>
-                <div>Bardzo ważne</div>
-            </label>
-            <label> 
-                <input type="radio" name="kategoria" id="kategoria2" value="wazne" />
-                <span class="bubble-wazne"></span>
-                <div>Ważne</div>
-            </label> 
-            <label> 
-                <input type="radio" name="kategoria" id="kategoria3" value="malo-wazne" />
-                <span class="bubble-malo-wazne"></span>
-                <div>Mało ważne</div>
-            </label>
+                <label for="radio">Bardzo ważne 🟥</label>
+            </div>
+            <div class="kategoria">
+            	<input type="radio" name="kategoria" id="kategoria2" value="wazne" />
+                <label for="radio">Ważne 🟨</label>
+            </div>
+            <div class="kategoria">
+            	<input type="radio" name="kategoria" id="kategoria3" value="malo-wazne" />
+                <label for="radio">Normalne 🟩</label>
+            </div>
         </div>
-        <button id="dodaj-zadanie">+</button>
+        <div id="dodaj-zadanie">
+            <span id="dodaj-zadanie-span">Dodaj zadanie</span>
+            <button id="dodaj-zadanie-btn">+</button>
+        </div>
     </div>
     <div id="zadania"></div>
     <script src="./js/script.js"></script>

@@ -22,6 +22,11 @@
     border-radius: 10px;
     background-color: #FFF;
     padding: 12px;
+    user-select: none;
+}
+
+#tytul:hover{
+    cursor: default;
 }
 
 #nowe-zadanie-tresc{
@@ -34,23 +39,110 @@
     height: 140px;
 }
 
-#data{
-    font-size: 20px;
+#data-wybor{
+    border:6px solid #41644A;
+    color: #000;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 25px;
+    background-color: #FFF;
+    height: 140px;
+    text-align: center;
+}
+
+#data-label{
+    font-size: 26px;
     font-weight: bold;
     color: #000;
     display: block;
-    border:6px solid #41644A;
-    border-radius: 10px;
-    background-color: #FFF;
     padding: 12px;
+    user-select: none;
+    background-color: #FFF;
+}
+
+#data{
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    display: block;
+    padding: 12px;
+    background-color: #FFF;
+    border: none;
+    text-align: center;
+    margin-left:27px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#kategoria-wybor{
+    border:6px solid #41644A;
+    color: #000;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 25px;
+    background-color: #FFF;
+    height: 140px;
+}
+
+.kategoria{
+    padding: 7.5px 0 10px 7.5px;
+    background-color: #FFF;
+}
+
+#kategoria-wybor label{
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    background-color: #FFF;
+}
+
+#kategoria1{
+    accent-color: red;
+    width: 18px;
+    height: 18px;
+}
+
+#kategoria2{
+    accent-color: yellow;
+    width: 18px;
+    height: 18px;
+}
+
+#kategoria3{
+    accent-color: green;
+    width: 18px;
+    height: 18px;
 }
 
 #dodaj-zadanie{
+    border:6px solid #41644A;
+    color: #000;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 25px;
+    background-color: #FFF;
+    height: 140px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#dodaj-zadanie-span{
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    user-select: none;
+    background-color: #FFF;
+    margin: 10px;
+}
+
+#dodaj-zadanie-btn{
     width: 50px;
     height: 50px;
+    margin: 10px;
     font-size: 37.5px;
-    padding: 2.5px 12.5px 2.5px 12.5px;
-    margin: 50px 7.5px 0 35px;
     border: 2px solid #263A29;
     background-color: #41644A;
     border-radius: 100px;
@@ -63,7 +155,6 @@
     gap: 24px;
     margin-top: 50px;
 }
-
 
 .zadanie{
     margin: 0 50px 0 50px;
@@ -86,7 +177,7 @@
 
 .zadanie-usun{
     position: absolute;
-    transform: translate(220px,-50px);
+    transform: translate(240px,-50px);
     font-size: 18px;
     font-weight: bold;
     padding: 3px 7.5px 3px 7.5px;
@@ -98,7 +189,7 @@
 
 .zadanie-ukoncz{
     position: absolute;
-    transform: translate(185px,-50px);
+    transform: translate(205px,-50px);
     font-size: 15.5px;
     font-weight: bold;
     padding: 3px 7.5px 3px 7.5px;
@@ -108,15 +199,9 @@
     cursor: pointer;
 }
 
-.zadanie-ukoncz img{
-    width: 15px;
-    height: 18px;
-    background: none;
-}
-
-.data-zakoncz{
+.dni-pomiędzy{
     position: absolute;
-    transform: translate(75px, -45px);
+    transform: translate(30px, -45px);
     font-size: 20px;
     font-weight: bold;
     background-color: #FFF;
