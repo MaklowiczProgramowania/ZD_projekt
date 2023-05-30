@@ -160,8 +160,30 @@
     margin: 0 50px 0 50px;
 }
 
-.zadanie-tresc{
-    border:6px solid #41644A;
+.zadanie-tresc-bardzo-wazne{
+    border:6px solid #da1b3b;
+    color: #000;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 25px;
+    background-color: #FFF;
+    resize:unset;
+    height: 280px;
+}
+
+.zadanie-tresc-wazne{
+    border:6px solid #fcd04f;
+    color: #000;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 25px;
+    background-color: #FFF;
+    resize:unset;
+    height: 280px;
+}
+
+.zadanie-tresc-normalne{
+    border:6px solid #71b668;
     color: #000;
     border-radius: 20px;
     padding: 20px;
@@ -175,26 +197,74 @@
     outline: none;
 }
 
-.zadanie-usun{
+.zadanie-usun-bardzo-wazne{
     position: absolute;
     transform: translate(240px,-50px);
     font-size: 18px;
     font-weight: bold;
     padding: 3px 7.5px 3px 7.5px;
-    border: 2px solid #263A29;
-    background-color: #41644A;
+    border: 2px solid #B04759;
+    background-color: #B04759;
     border-radius: 100px;
     cursor: pointer;
 }
 
-.zadanie-ukoncz{
+.zadanie-usun-wazne{
+    position: absolute;
+    transform: translate(240px,-50px);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 3px 7.5px 3px 7.5px;
+    border: 2px solid #FFD966;
+    background-color: #FFD966;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.zadanie-usun-normalne{
+    position: absolute;
+    transform: translate(240px,-50px);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 3px 7.5px 3px 7.5px;
+    border: 2px solid #7AA874;
+    background-color: #7AA874;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.zadanie-ukoncz-bardzo-wazne{
     position: absolute;
     transform: translate(205px,-50px);
     font-size: 15.5px;
     font-weight: bold;
     padding: 3px 7.5px 3px 7.5px;
-    border: 2px solid #263A29;
-    background-color: #41644A;
+    border: 2px solid #B04759;
+    background-color: #B04759;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.zadanie-ukoncz-wazne{
+    position: absolute;
+    transform: translate(205px,-50px);
+    font-size: 15.5px;
+    font-weight: bold;
+    padding: 3px 7.5px 3px 7.5px;
+    border: 2px solid #FFD966;
+    background-color: #FFD966;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.zadanie-ukoncz-normalne{
+    position: absolute;
+    transform: translate(205px,-50px);
+    font-size: 15.5px;
+    font-weight: bold;
+    padding: 3px 7.5px 3px 7.5px;
+    border: 2px solid #7AA874;
+    background-color: #7AA874;
     border-radius: 100px;
     cursor: pointer;
 }
