@@ -16,7 +16,7 @@ poleData.setAttribute('value', minDate);
 
 // Dla każdego zadania w localStorage stwórz element zadania
 getZadania().forEach(zadanie => {
-    const zadanieElement = stworzZadanie(zadanie.id, zadanie.tresc, zadanie.dataZakoncz, zadanie.waga);
+    const zadanieElement = stworzZadanie(zadanie.id, zadanie.tresc, zadanie.dataZakoncz, zadanie.waga, zadanie.czyWykonane);
     zadaniaDiv.appendChild(zadanieElement); 
 });
 
@@ -25,6 +25,8 @@ dodajZadanieP.addEventListener("click", () => dodajZadanie());
 
 // Pobierz zadania z localStorage
 function getZadania(){
+
+    // Jeśli nie ma żadnych zadań w localStorage, to zwróć pustą tablicę
     return JSON.parse(localStorage.getItem("zadania-tresci") || "[]");
 }
 
@@ -34,7 +36,7 @@ function zapiszZadania( zadania ){
 }
 
 // Stwórz element zadania z przyciskami oraz polem tekstowym a następnie dodaj do nich event listenery, i zwróć element zadania
-function stworzZadanie( id, tresc, dataZakoncz, waga ){
+function stworzZadanie( id, tresc, dataZakoncz, waga, czyWykonane ){
 
     const zadanie = document.createElement("div");
     zadanie.classList.add("zadanie");
@@ -43,12 +45,22 @@ function stworzZadanie( id, tresc, dataZakoncz, waga ){
     poleTekstowe.value = tresc;
     poleTekstowe.maxLength = "128";
 
-    
     const usunZadanieP = document.createElement("button");
     usunZadanieP.innerText = "X";
     
     const ukonczZadanieP = document.createElement("button");
     ukonczZadanieP.innerText = "✔";
+    ukonczZadanieP.addEventListener("click", () => {
+
+        const czyWykonanac = confirm("Czy na pewno chcesz oznaczyć zadanie jako wykonane?");
+
+        if (czyWykonanac) {
+            wykonajZadanie( id );
+            
+            // Odśwież stronę
+            location.reload();
+        }
+    });
     
     const data = document.createElement("span");
     const dzisiaj = new Date();
@@ -95,15 +107,24 @@ function stworzZadanie( id, tresc, dataZakoncz, waga ){
     zadanie.appendChild(usunZadanieP);
     
 
+    
+    if (!czyWykonane) {
+        zadanie.appendChild(ukonczZadanieP);
+    } else {
+        poleTekstowe.style.textDecoration = "line-through";
+        poleTekstowe.style.borderColor = "grey";
+        usunZadanieP.style.borderColor = "grey";
+        usunZadanieP.style.backgroundColor = "grey";
+        return zadanie;
+    }
+    
     // Jeśli czas się skończył, to poinformuj o tym użytkownika
     if(dniPomiędzy < 0){
-        data.innerText = "Nie ukończone";
+        data.innerText = "Nie ukończono";
         poleTekstowe.style.textDecoration = "line-through";
         poleTekstowe.style.textDecorationColor = "red";
         return zadanie;
     }
-
-    zadanie.appendChild(ukonczZadanieP);
 
     // Jeśli zadanie jest do dziś, to poinformuj o tym użytkownika
     if(dniPomiędzy == 0){
@@ -137,6 +158,7 @@ function dodajZadanie(){
 
     const istniejaceZadania = getZadania();
     const dataZakonczInput = new Date(poleData.value);
+
     let zaznaczonaWaga = "";
 
     for (var i = 0; i < wagaZadania.length; i++) {
@@ -147,13 +169,15 @@ function dodajZadanie(){
     }
 
     const zadanieObiekt = {
+        // generuj losowe id z zakresu 0-10000
         id: Math.floor(Math.random() * 10000),
         tresc: trescNoweZadanie.value,
         dataZakoncz: dataZakonczInput.getTime(),
-        waga: zaznaczonaWaga
+        waga: zaznaczonaWaga,
+        czyWykonane: false
     };
 
-    const zadanieElement = stworzZadanie( zadanieObiekt.id, zadanieObiekt.tresc, zadanieObiekt.dataZakoncz, zadanieObiekt.waga );
+    const zadanieElement = stworzZadanie( zadanieObiekt.id, zadanieObiekt.tresc, zadanieObiekt.dataZakoncz, zadanieObiekt.waga, zadanieObiekt.czyWykonane );
     zadaniaDiv.appendChild(zadanieElement); 
 
     istniejaceZadania.push( zadanieObiekt );
@@ -168,6 +192,16 @@ function aktualizujZadanie( id, nowaTresc ){
     const zadanieTarget = zadania.filter(zadania => zadania.id == id)[0];
 
     zadanieTarget.tresc = nowaTresc;
+    zapiszZadania(zadania);
+}
+
+function wykonajZadanie( id ){
+    const zadania = getZadania();
+
+    // Użyj metody filter aby znaleźć zadania o podanym id i wybierz pierwsze z nich
+    const zadanieTarget = zadania.filter(zadania => zadania.id == id)[0];
+
+    zadanieTarget.czyWykonane = true;
     zapiszZadania(zadania);
 }
 
